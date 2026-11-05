@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Conecta UPVT | Comunidad universitaria contra la desconexión social</title>
+<meta name="description" content="Sitio de apoyo para estudiantes de la Universidad Politécnica del Valle de Toluca: haz amigos, encuentra actividades y habla con nuestro asistente.">
+<style>
+:root{--bg:#f4f8f7;--card:#fff;--ink:#1a2b29;--muted:#5a6e6b;--brand:#0b7a6b;--brand2:#12a58f;--soft:#e3f4f0;--line:#d5e4e0;--bot:#eef3f2;--hero1:#0a5f55;--hero2:#12a58f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1918;--card:#14262a;--ink:#e6f1ef;--muted:#9bb3af;--brand:#2cc5ae;--soft:#1b3535;--line:#274540;--bot:#1c3234;--hero1:#08423b;--hero2:#0e7c6c}}
+:root[data-theme="dark"]{--bg:#0d1918;--card:#14262a;--ink:#e6f1ef;--muted:#9bb3af;--brand:#2cc5ae;--soft:#1b3535;--line:#274540;--bot:#1c3234;--hero1:#08423b;--hero2:#0e7c6c}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:18px;padding:12px 5vw;flex-wrap:wrap}
+nav b{font-size:18px;color:var(--brand);margin-right:auto}nav a{color:var(--ink);text-decoration:none;font-size:14px}nav a:hover{color:var(--brand)}
+.hero{background:linear-gradient(120deg,var(--hero1),var(--hero2));color:#fff;padding:72px 5vw;text-align:center}
+.hero h1{font-size:clamp(30px,6vw,50px);margin:0 0 14px;line-height:1.15}.hero p{max-width:640px;margin:0 auto 26px;font-size:18px;opacity:.95}
+.btn{display:inline-block;background:#fff;color:#0a5f55;padding:13px 26px;border-radius:30px;font-weight:700;text-decoration:none;margin:5px}.btn.alt{background:transparent;color:#fff;border:2px solid #fff}
+section{padding:56px 5vw;max-width:1000px;margin:0 auto}h2{font-size:28px;margin:0 0 8px}.lead{color:var(--muted);margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}.card .e{font-size:30px}.card h3{margin:8px 0 6px;font-size:17px}.card p{margin:0;font-size:14.5px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:10px}.tag{background:var(--soft);color:var(--brand);border-radius:30px;padding:9px 16px;font-size:14px;font-weight:600}
+.reto{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center}.reto p{font-size:19px;margin:10px 0 16px}
+.go{border:0;background:var(--brand);color:#fff;border-radius:30px;padding:11px 22px;font-weight:600;cursor:pointer;font-family:inherit;font-size:14px}
+.chatbox{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;height:560px;max-height:80vh}
+.ch{background:linear-gradient(115deg,var(--hero1),var(--hero2));color:#fff;padding:14px 18px;font-weight:700}
+#log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:11px 14px;border-radius:15px;font-size:14.5px;white-space:pre-wrap}
+.bot{background:var(--bot);align-self:flex-start;border-bottom-left-radius:4px}.user{background:var(--brand);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.alert{background:var(--soft);border:1px solid var(--brand)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--brand);background:var(--card);color:var(--brand);padding:8px 13px;border-radius:30px;font-size:13px;cursor:pointer;font-family:inherit}.chip:hover{background:var(--soft)}
+form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+input{flex:1;min-width:0;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:30px;padding:12px 16px;font-size:14.5px;font-family:inherit}
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+footer{text-align:center;padding:30px 5vw 40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);max-width:760px;margin:0 auto}
+@media(max-width:540px){nav a{display:none}nav a.keep{display:inline}}
+</style>
+</head>
+<body>
+<nav><b>🤝 Conecta UPVT</b><a href="#que">Qué es</a><a href="#actividades">Actividades</a><a href="#chat">Asistente</a><a class="keep" href="#contacto">Contacto</a></nav>
+
+<header class="hero">
+<h1>Nadie debería sentirse solo en la universidad</h1>
+<p>Un espacio para estudiantes de la Universidad Politécnica del Valle de Toluca: encuentra amistades, actividades y apoyo para sentirte parte de la comunidad.</p>
+<a class="btn" href="#chat">Hablar con el asistente</a><a class="btn alt" href="#actividades">Ver actividades</a>
+</header>
+
+<section id="que">
+<h2>¿Cómo podemos ayudarte?</h2>
+<p class="lead">La desconexión social afecta el ánimo, el estudio y la permanencia en la universidad. Pequeños pasos hacen la diferencia.</p>
+<div class="grid">
+<div class="card"><div class="e">🙋</div><h3>Hacer amigos</h3><p>Ideas sencillas para romper el hielo con tus compañeros de grupo.</p></div>
+<div class="card"><div class="e">📚</div><h3>Estudiar acompañado</h3><p>Forma círculos de estudio y comparte apuntes y asesorías.</p></div>
+<div class="card"><div class="e">🧳</div><h3>Nuevo ingreso y foráneos</h3><p>Orientación para quienes llegan de otra ciudad o apenas empiezan.</p></div>
+<div class="card"><div class="e">💙</div><h3>Apoyo emocional</h3><p>Te orientamos para acercarte al área de apoyo de la universidad.</p></div>
+</div>
+</section>
+
+<section id="actividades">
+<h2>Actividades para conocer gente</h2>
+<p class="lead">Según fuentes públicas, en la UPVT se han practicado estas actividades. La oferta puede cambiar cada cuatrimestre: confírmala con la universidad.</p>
+<div class="tags"><span class="tag">♟️ Ajedrez</span><span class="tag">🏃 Atletismo</span><span class="tag">🏀 Basquetbol</span><span class="tag">🏐 Voleibol</span><span class="tag">⚽ Fútbol</span><span class="tag">🥋 Taekwondo</span><span class="tag">🏊 Natación</span><span class="tag">💃 Danza</span><span class="tag">🎬 Cine club</span><span class="tag">🎵 Música</span></div>
+<h3 style="margin-top:34px">Ideas de eventos de convivencia</h3>
+<div class="grid" style="margin-top:12px">
+<div class="card"><h3>🎲 Noche de juegos</h3><p>Juegos de mesa o videojuegos entre carreras.</p></div>
+<div class="card"><h3>🏆 Torneo relámpago</h3><p>Fútbol, voleibol o ajedrez en un solo día.</p></div>
+<div class="card"><h3>🍲 Comida compartida</h3><p>Cada quien lleva algo y se conocen en grupo.</p></div>
+<div class="card"><h3>👋 Bienvenida</h3><p>Recibir a estudiantes de nuevo ingreso.</p></div>
+</div>
+<p class="lead" style="margin-top:16px">¿Quieres organizar uno? Reúne a 3 o 4 compañeros y preséntalo a tu coordinación.</p>
+</section>
+
+<section>
+<div class="reto"><h2>🎲 Tu reto de conexión de hoy</h2><p id="reto">Pulsa el botón para recibir un pequeño reto.</p><button class="go" id="nuevo">Dame un reto</button></div>
+</section>
+
+<section id="chat">
+<h2>Habla con el asistente</h2>
+<p class="lead">Elige un tema o escribe con tus palabras. No guarda ni envía tus mensajes.</p>
+<div class="chatbox"><div class="ch">🤝 Conecta UPVT</div><div id="log" aria-live="polite"></div>
+<form id="f"><input id="t" autocomplete="off" placeholder="Escribe cómo te sientes o qué buscas…" aria-label="Mensaje"><button class="go" type="submit">Enviar</button></form></div>
+</section>
+
+<section id="contacto">
+<h2>Contacto</h2>
+<p class="lead">Datos públicos de la UPVT. Verifica siempre en el sitio oficial.</p>
+<div class="contact">
+<div class="card"><h3>🌐 Sitio oficial</h3><p>upvt.edomex.gob.mx</p></div>
+<div class="card"><h3>📞 Teléfono</h3><p>722 276 60 60</p></div>
+<div class="card"><h3>📍 Ubicación</h3><p>Almoloya de Juárez, Estado de México</p></div>
+<div class="card"><h3>📱 Redes</h3><p>Cuenta oficial «UPVToficial»</p></div>
+</div>
+</section>
+
+<footer>Sitio informativo y no oficial. No sustituye la atención de profesionales de la salud mental. Si estás en peligro inmediato, llama al 911; para apoyo emocional en México, Línea de la Vida: 800 911 2000.</footer>
+
+<script>
+const MENU=[["😔 Me siento solo/a","solo"],["🙋 Quiero hacer amigos","amigos"],["🎯 Clubes y actividades","clubes"],["📚 Estudiar en equipo","estudio"],["🧳 Nuevo ingreso o foráneo/a","nuevo"],["🌧️ Estoy estresado/a","estres"],["🎉 Eventos","eventos"],["📞 Contacto","contacto"],["🎲 Reto","reto"]];
+const R={
+solo:"Gracias por decirlo: sentirse solo/a en la universidad es más común de lo que parece, y no significa que algo esté mal contigo.\n\nPequeños pasos que suelen ayudar:\n• Saluda a una persona distinta cada día, aunque sea de tu salón.\n• Propón un café o comida después de clase a alguien con quien ya hayas hablado.\n• Únete a una actividad con horario fijo; ver las mismas caras genera confianza.\n\nSi esta sensación se vuelve pesada o dura semanas, hablar con el área de apoyo psicológico u orientación de la universidad puede ayudarte mucho.",
+amigos:"Hacer amigos toma tiempo, y está bien empezar con poco:\n1. Elige a alguien de tu grupo y comenta algo concreto: una tarea, un proyecto.\n2. Participa en el grupo de mensajería de tu carrera con una pregunta o un recurso útil.\n3. Invita a dos o tres compañeros a estudiar o a comer.\n4. Repite: la amistad se construye con encuentros frecuentes, no con uno perfecto.\n\nUna frase para romper el hielo: “¿Ya empezaste el proyecto? ¿Lo vemos juntos un rato?”",
+clubes:"Los grupos y actividades son de las formas más fáciles de conocer gente con intereses afines.\n\nSegún fuentes públicas, en la UPVT se han practicado ajedrez, atletismo, basquetbol, voleibol, fútbol, taekwondo, natación, danza, cine club y talleres de música. La oferta puede cambiar cada cuatrimestre.\n\nCómo buscarlos:\n• Pregunta en tu coordinación de carrera o en el área de actividades culturales y deportivas.\n• Si no existe lo que buscas, propón crear un grupo con 3 o 4 personas.",
+estudio:"Estudiar en equipo ayuda a aprender y a conectar:\n• Forma un círculo de estudio de 3 a 5 personas con horario semanal fijo.\n• Dividan temas y expliquen entre ustedes.\n• Si ya entiendes un tema, ofrece asesoría: enseñar fortalece tu aprendizaje.\n• Si te cuesta una materia, pregunta por tutorías o asesorías.\n\nPuedes empezar con: “Voy a estudiar para el examen el jueves. ¿Alguien se une?”",
+nuevo:"Llegar a una ciudad o universidad nueva es intenso, y es normal extrañar tu casa.\n• Mantén una rutina de comida, sueño y estudio.\n• Pregunta si hay grupos para quienes vienen de otros municipios o estados.\n• Busca a estudiantes de cuatrimestres avanzados; muchos disfrutan orientar.\n• Agenda llamadas con tu familia, pero también ten planes en tu nuevo entorno.\n\nPregunta en coordinación si existen programas de integración o mentoría.",
+estres:"El estrés académico y la soledad suelen alimentarse entre sí. Algunas ideas:\n• Divide tus pendientes en partes pequeñas y celebra cada avance.\n• Duerme y come con regularidad.\n• Haz pausas cortas acompañado/a: caminar 10 minutos ayuda a bajar la tensión.\n• Cuéntale a una persona de confianza cómo te sientes.\n\nSi el estrés te supera, acércate al área de orientación o apoyo psicológico de tu universidad.",
+eventos:"Ideas de eventos para convivir:\n• Noche de juegos de mesa o videojuegos\n• Torneo relámpago de fútbol, voleibol o ajedrez\n• Cine club con debate\n• Comida compartida entre compañeros\n• Intercambio de apuntes y libros\n• Bienvenida para nuevo ingreso\n\nCómo proponerlo:\n1. Reúne a 3 o 4 interesados.\n2. Define idea, fecha y lugar.\n3. Preséntalo a tu coordinación o al área de actividades culturales y deportivas.\n4. Difúndelo en los grupos de tu carrera.",
+contacto:"Datos de contacto publicados de la UPVT:\n• Sitio oficial: upvt.edomex.gob.mx\n• Redes: cuenta oficial “UPVToficial”\n• Teléfono: 722 276 60 60\n• Ubicación: Almoloya de Juárez, Estado de México\n\nVerifica siempre los datos en el sitio oficial.",
+apoyo:"Pedir ayuda es un acto de valentía. Puedes acercarte al área de orientación, bienestar o apoyo psicológico de la universidad y decir: “Me gustaría hablar con alguien sobre cómo me he sentido”. Si no sabes dónde está, pregunta en tu coordinación o en Servicios Escolares.",
+gracias:"Con gusto. Un paso pequeño hoy ya cuenta. Aquí estaré cuando quieras seguir conversando.",
+hola:"¡Hola! Soy Conecta UPVT. Elige un tema o escríbeme con tus propias palabras."};
+const RETOS=["Saluda hoy a alguien de tu salón con quien no hayas hablado.","Pregunta a un compañero cómo le fue en la última tarea o examen.","Invita a alguien a comer después de clase.","Comparte tus apuntes en el grupo de tu carrera.","Pide a alguien una recomendación: una serie, música o un lugar para comer.","Agradece a un compañero o profesor por algo concreto.","Asiste a una actividad del campus aunque vayas solo/a."];
+const CRISIS=/(suicid|quitarme la vida|quiero morir|no quiero vivir|acabar con todo|hacerme da[ñn]o|lastimarme|autolesi|cortarme)/i;
+const RULES=[[/(tel[eé]fono|contacto|d[oó]nde est[aá]|ubicaci|p[aá]gina|sitio web|redes sociales)/i,"contacto"],[/(evento|convivi|fiesta|festival|torneo|noche de|proponer)/i,"eventos"],[/(solo|sola|soledad|aislad|nadie|incomprendid|vac[ií]o)/i,"solo"],[/(amig|conocer gente|socializar|platicar|t[ií]mid|pena)/i,"amigos"],[/(club|actividad|deporte|grupo|cultural|taller|voluntar)/i,"clubes"],[/(estudi|tarea|proyecto|materia|asesor|tutor|examen)/i,"estudio"],[/(nuevo ingreso|for[aá]ne|primer (cuatri|semestre)|reci[eé]n|extra[ñn]o mi|otra ciudad)/i,"nuevo"],[/(estr[eé]s|ansied|agobi|abrumad|cansad|triste|deprim)/i,"estres"],[/(psic[oó]log|ayuda profesional|hablar con alguien|orientaci[oó]n)/i,"apoyo"],[/(reto|desaf[ií]o)/i,"reto"],[/(gracias|^ok$|vale)/i,"gracias"],[/^(hola|buenas|hey|qu[eé] tal)/i,"hola"]];
+const log=document.getElementById("log"),inp=document.getElementById("t"),rt=()=>RETOS[Math.floor(Math.random()*RETOS.length)];
+function add(t,c){const d=document.createElement("div");d.className="msg "+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function chips(){const w=document.createElement("div");w.className="chips";MENU.forEach(([l,k])=>{const b=document.createElement("button");b.className="chip";b.type="button";b.textContent=l;b.onclick=()=>{add(l.replace(/^\S+\s/,""),"user");answer(k)};w.appendChild(b)});log.appendChild(w);log.scrollTop=log.scrollHeight}
+function answer(k){setTimeout(()=>{
+ if(k==="crisis")add("Siento mucho que estés pasando por esto, y me importa lo que me cuentas. No tienes que enfrentarlo solo/a.\n\nSi estás en peligro inmediato, llama al 911. Para apoyo emocional en México puedes comunicarte con la Línea de la Vida: 800 911 2000. Si puedes, avisa ahora mismo a una persona cercana y pídele que se quede contigo.\n\nTambién puedes pedir ayuda en el área de orientación o apoyo psicológico de la universidad.","bot alert");
+ else if(k==="reto")add("Tu reto de conexión de hoy:\n"+rt()+"\n\nNo tiene que salir perfecto; intentarlo ya es avanzar.","bot");
+ else if(k==="none")add("Gracias por contármelo. No tengo una respuesta exacta para eso, pero puedo ayudarte con alguno de estos temas:","bot");
+ else add(R[k],"bot");
+ chips()},350)}
+function send(t){add(t,"user");if(CRISIS.test(t))return answer("crisis");for(const [re,k] of RULES)if(re.test(t))return answer(k);answer("none")}
+document.getElementById("f").addEventListener("submit",e=>{e.preventDefault();const v=inp.value.trim();if(!v)return;inp.value="";send(v)});
+document.getElementById("nuevo").onclick=()=>{document.getElementById("reto").textContent=rt()};
+add("¡Hola! Soy Conecta UPVT 🤝\nEstoy aquí para ayudarte a sentirte parte de la comunidad de la Universidad Politécnica del Valle de Toluca. Elige un tema o cuéntame con tus palabras.","bot");chips();
+</script>
+</body>
+</html>
